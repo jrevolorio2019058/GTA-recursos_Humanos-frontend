@@ -90,45 +90,43 @@ export const FormLogin = () => {
 
             <div className="contenedor">
 
-                <div><h2>Inicio Sesión</h2></div>
+                <div className="title"><h2>Inicio Sesión</h2></div>
 
-                <div>
+                <div className="components">
 
-                    <div>
-
-                        <Input
+                    <Input
                         
-                            field="username"
-                            type="text"
-                            value={form.username.value}
-                            placeholderText="Usuario"
-                            onChangeHandler={handleInputValueChange}
-                            onBlurHandler={handleInputValidationOnBlur}
-                            showErrorMessage={form.username.showErrorMessage}
-                            validationMessage= "El usuario es requerido"
-                            className="input-login"
+                        field="username"
+                        type="text"
+                        value={form.username.value}
+                        placeholderText="Usuario"
+                        onChangeHandler={handleInputValueChange}
+                        onBlurHandler={handleInputValidationOnBlur}
+                        showErrorMessage={form.username.showErrorMessage}
+                        validationMessage= "El usuario es requerido"
+                        className="input-login"
+                    
+                    />
+
+                    <Input
                         
-                        />
-
-                    </div>
-
-                    <div>
-
-                        <Input
+                        field="password"
+                        type="text"
+                        value={form.username.value}
+                        placeholderText="Contraseña"
+                        onChangeHandler={handleInputValueChange}
+                        onBlurHandler={handleInputValidationOnBlur}
+                        showErrorMessage={form.username.showErrorMessage}
+                        validationMessage= "El usuario es requerido"
+                        className="input-login"
                         
-                            field="password"
-                            type="text"
-                            value={form.username.value}
-                            placeholderText="Contraseña"
-                            onChangeHandler={handleInputValueChange}
-                            onBlurHandler={handleInputValidationOnBlur}
-                            showErrorMessage={form.username.showErrorMessage}
-                            validationMessage= "El usuario es requerido"
-                            className="input-login"
-                        
-                        />
+                    />
 
-                    </div>
+                    <button className="btn">
+
+                        Login
+
+                    </button>
 
                 </div>
 
