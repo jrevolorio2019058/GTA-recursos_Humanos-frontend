@@ -38,14 +38,14 @@ export const LoginPage = () => {
 
         {images.map((image, index) => (
 
-          <img
-          
-            key={index}
-            src={image}
-            alt={`Background ${index + 1}`}
-            className={`bg-image ${index === currentImageIndex ? 'active' : ''}`}
-          
-          />
+            <img
+            
+              key={index}
+              src={image}
+              alt={`Background ${index + 1}`}
+              className={`bg-image ${index === currentImageIndex ? 'active' : ''}`}
+            
+            />
         ))}
 
       </div>

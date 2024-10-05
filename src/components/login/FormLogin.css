@@ -7,7 +7,15 @@ body, html {
     align-items: center;
     justify-content: center;
 }
-  
+
+.form-container{
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 .contenedor {
 
@@ -16,11 +24,14 @@ body, html {
     align-items: center;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;    
-    width: 400px;   
-    height: 300px;  
+    max-width: 400px;
+    width: 90%;   
+    height: auto;  
     border: 2px solid #000; 
     border-radius: 40px;
     background-color: #f5f5f5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 
 }
 
