@@ -11,11 +11,14 @@ import { Toaster } from "react-hot-toast";
 
 import {LoginPage} from "./pages/login/loginPage.jsx";
 
+import {Home} from "./pages/home/home.jsx";
+
 function AppRoutes() {
 
   const routes = useRoutes([
 
-    { path: "/", element: <LoginPage/> }
+    { path: "/", element: <LoginPage/> },
+    { path: "/home", element: <Home/> }
 
   ]);
 
