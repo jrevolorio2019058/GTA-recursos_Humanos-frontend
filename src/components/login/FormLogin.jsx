@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
-
 import { useState } from "react";
 
 import { Input } from "../others/Input.jsx";
 
+import { useAuth } from "../../shared/hooks";
+
 import "./FormLogin.css";
 
 export const FormLogin = () => {
+
+    const { login, isLoading } = useAuth();
 
     const [form, setForm] = useState({
 
@@ -84,6 +86,18 @@ export const FormLogin = () => {
 
     };
 
+    const handleLogin = (event) => {
+
+        event.preventDefault();
+
+        login(form.username.value, form.password.value);
+
+    }
+
+    const buttonDisabled = 
+
+    isLoading || !form.username.isValid || !form.password.isValid;
+
     return (
 
         <div className="form-container">
@@ -102,7 +116,7 @@ export const FormLogin = () => {
                         placeholderText="Usuario"
                         onChangeHandler={handleInputValueChange}
                         onBlurHandler={handleInputValidationOnBlur}
-                        showErrorMessage={form.username.showErrorMessage}
+                        showErrorMessage={form.username.showError}
                         validationMessage= "El usuario es requerido"
                         className="input-login"
                     
@@ -111,18 +125,25 @@ export const FormLogin = () => {
                     <Input
                         
                         field="password"
-                        type="text"
-                        value={form.username.value}
+                        type="password"
+                        value={form.password.value}
                         placeholderText="Contraseña"
                         onChangeHandler={handleInputValueChange}
                         onBlurHandler={handleInputValidationOnBlur}
-                        showErrorMessage={form.username.showErrorMessage}
-                        validationMessage= "El usuario es requerido"
+                        showErrorMessage={form.password.showError}
+                        validationMessage= "La contraseña es requerida"
                         className="input-login"
                         
                     />
 
-                    <button className="btn">
+                    <button 
+                    
+                    className="btn"
+                    type="submit"
+                    onClick={handleLogin}
+                    disabled={buttonDisabled}
+                    
+                    >
 
                         Login
 
@@ -134,6 +155,6 @@ export const FormLogin = () => {
 
         </div>
 
-    )
+    );
 
-}
+};

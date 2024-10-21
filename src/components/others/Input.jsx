@@ -8,7 +8,7 @@ export const Input = ({
     label,
     placeholderText,
     value,
-    onchangeHandler,
+    onChangeHandler,
     type,
     classNameInput,
     showErrorMessage,
@@ -20,7 +20,7 @@ export const Input = ({
 
     const handleValueChange = (event) => {
 
-        onchangeHandler(event.target.value, field);
+        onChangeHandler(event.target.value, field);
 
     };
 
