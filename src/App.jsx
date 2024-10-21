@@ -7,6 +7,8 @@ import{
 
 } from "react-router-dom";
 
+import { Toaster } from "react-hot-toast";
+
 import {LoginPage} from "./pages/login/loginPage.jsx";
 
 function AppRoutes() {
@@ -26,6 +28,8 @@ function App(){
   return (
 
     <Router>
+
+      <Toaster position="top-center" reverseOrder={false}/>
 
       <AppRoutes />
 

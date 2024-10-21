@@ -20,41 +20,43 @@ export const useAuth = () => {
 
             const response = await loginRequest({username, password});
 
-        if(response.error  && response.e){
+            if(response.error  && response.e){
 
-            setIsLoading(false);
+                setIsLoading(false);
 
-            return toast.error("Un error a occurrido, intente más tarde por favor.");
+                return toast.error("Creedenciales Errones");
 
-        }
+            }
 
-        const {user, token} = response.data;
+            const {user, token} = response.data;
 
-        localStorage.setItem(
+            localStorage.setItem(
 
-            "token",
+                "token",
 
-            JSON.stringify({
+                JSON.stringify({
 
-                token,
-                username: user.username,
-                role: user.role
+                    token,
+                    username: user.username,
+                    role: user.role
 
-            }),
+                }),
 
-        );
+            );
 
-        setIsLoading(false);
+            navigate("/home");
 
-        navigate("/home");
-
-        return toast.success(`${response.data.msg}`);
+            return toast.success(`Logeo Exitoso, bienvenido ${user.username}`);
 
         }catch(e){
 
             setIsLoading(false);
             
             toast.error(error.message || "Ocurrio un error, intenta de nuevo");
+
+        }finally{
+
+            setIsLoading(false);
 
         }
 
